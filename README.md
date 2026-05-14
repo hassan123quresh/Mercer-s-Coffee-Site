@@ -48,3 +48,16 @@ npm run build
 
 ## 📍 Location
 MM Square 5L, Block L Gulberg 2, Lahore
+
+## 🌐 Deployment
+
+### Cloudflare Pages
+This project is ready for deployment on Cloudflare Pages.
+
+1. **Build Settings**:
+   - **Framework preset**: `Vite`
+   - **Build command**: `npm run build`
+   - **Build output directory**: `dist`
+
+2. **SPA Routing**:
+   The `public/_redirects` file is included to handle client-side routing (Single Page Application).
