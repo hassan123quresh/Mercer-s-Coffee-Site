@@ -311,11 +311,11 @@ export default function HomePage() {
           SECTION 5 — BRAND STORY (STICKERS)
       ════════════════════════════════════════════ */}
       <section
-        className="py-20 md:py-32 px-5 md:px-10 lg:px-16 overflow-hidden"
+        className="py-12 md:py-32 px-5 md:px-10 lg:px-16 overflow-hidden"
         style={{ background: '#535F48' }}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 items-center">
 
             {/* Text */}
             <motion.div
@@ -354,74 +354,72 @@ export default function HomePage() {
             </motion.div>
 
             {/* Stickers collage */}
-            <div className="relative h-80 md:h-96 select-none">
+            <div className="relative h-[250px] sm:h-[320px] md:h-[480px] select-none">
               {[
                 {
                   label: 'Doppio',
-                  bg: '#FFFFFF',
-                  color: '#535F48',
+                  img: 'https://res.cloudinary.com/dacyy7rkn/image/upload/v1778406643/3_ae8mit.png',
+                  className: 'w-20 sm:w-28 md:w-48',
                   style: {
-                    top: '4%',
-                    left: '2%',
+                    top: '-4%',
+                    left: '-2%',
+                    transform: 'rotate(-12deg)',
+                  },
+                  floatDuration: 5.5,
+                  floatDelay: 0,
+                  initDelay: 0.05,
+                },
+                {
+                  label: 'Lotus Cheese Cake',
+                  img: 'https://res.cloudinary.com/dacyy7rkn/image/upload/v1778406642/15_vpgh7a.png',
+                  className: 'w-26 sm:w-36 md:w-60',
+                  style: {
+                    bottom: '-4%',
+                    left: '-1%',
+                    transform: 'rotate(6deg)',
+                  },
+                  floatDuration: 6.2,
+                  floatDelay: 0.5,
+                  initDelay: 0.15,
+                },
+                {
+                  label: 'Strawberry Matcha',
+                  img: 'https://res.cloudinary.com/dacyy7rkn/image/upload/v1778406643/2_biga1n.png',
+                  className: 'w-22 sm:w-32 md:w-52',
+                  style: {
+                    top: '15%',
+                    left: '26%',
+                    transform: 'rotate(-5deg)',
+                  },
+                  floatDuration: 5.8,
+                  floatDelay: 0.2,
+                  initDelay: 0.1,
+                },
+                {
+                  label: 'Hot Chocolate',
+                  img: 'https://res.cloudinary.com/dacyy7rkn/image/upload/v1778406642/8_sruliu.png',
+                  className: 'w-22 sm:w-32 md:w-52',
+                  style: {
+                    bottom: '-6%',
+                    right: '6%',
                     transform: 'rotate(-8deg)',
-                    minWidth: '110px',
-                    height: '46px',
-                    borderRadius: '100px',
                   },
+                  floatDuration: 6.5,
+                  floatDelay: 0.7,
+                  initDelay: 0.2,
                 },
                 {
-                  label: 'Lotus\nCheese Cake',
-                  bg: '#7a9060',
-                  color: '#535F48',
+                  label: 'Extra Espresso Shot',
+                  img: 'https://res.cloudinary.com/dacyy7rkn/image/upload/v1778406642/15_vpgh7a.png',
+                  className: 'w-18 sm:w-24 md:w-44',
                   style: {
-                    top: '50%',
-                    left: '0%',
-                    transform: 'rotate(4deg)',
-                    minWidth: '130px',
-                    height: '66px',
-                    borderRadius: '100px',
+                    top: '-5%',
+                    right: '-2%',
+                    transform: 'rotate(15deg)',
                   },
-                },
-                {
-                  label: 'Strawberry\nMatcha',
-                  bg: '#FFFFFF',
-                  color: '#535F48',
-                  style: {
-                    top: '22%',
-                    left: '32%',
-                    transform: 'rotate(-3deg)',
-                    minWidth: '130px',
-                    height: '58px',
-                    borderRadius: '100px',
-                  },
-                },
-                {
-                  label: 'Hot\nChocolate',
-                  bg: '#2e2920',
-                  color: '#FFFFFF',
-                  style: {
-                    top: '62%',
-                    left: '38%',
-                    transform: 'rotate(5deg)',
-                    minWidth: '130px',
-                    height: '58px',
-                    borderRadius: '100px',
-                    border: '1px solid rgba(255,255,255,0.25)',
-                  },
-                },
-                {
-                  label: 'Extra\nEspresso\nShot',
-                  bg: '#4A5541',
-                  color: '#FFFFFF',
-                  style: {
-                    top: '5%',
-                    right: '4%',
-                    transform: 'rotate(11deg)',
-                    minWidth: '105px',
-                    height: '76px',
-                    borderRadius: '100px',
-                    border: '1px solid rgba(255,255,255,0.3)',
-                  },
+                  floatDuration: 5.0,
+                  floatDelay: 0.4,
+                  initDelay: 0.25,
                 },
               ].map((s, i) => (
                 <motion.div
@@ -430,50 +428,67 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{
-                    delay: i * 0.09,
-                    duration: 0.55,
+                    delay: s.initDelay,
+                    duration: 0.6,
                     type: 'spring',
-                    stiffness: 150,
-                    damping: 15,
+                    stiffness: 120,
+                    damping: 14,
                   }}
-                  className="absolute flex items-center justify-center text-center px-5"
+                  className={`absolute select-none ${s.className}`}
                   style={{
-                    background: s.bg,
-                    color: s.color,
-                    boxShadow: '0 10px 36px rgba(0,0,0,0.45)',
-                    fontFamily: 'Inter',
-                    fontSize: '9px',
-                    fontWeight: 700,
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase',
-                    lineHeight: 1.35,
-                    whiteSpace: 'pre-line',
+                    filter: 'drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18))',
                     ...s.style,
                   }}
                 >
-                  {s.label}
+                  <motion.img
+                    src={s.img}
+                    alt={s.label}
+                    className="w-full h-auto object-contain"
+                    animate={{
+                      y: [0, -10, 0],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      duration: s.floatDuration,
+                      ease: 'easeInOut',
+                      delay: s.floatDelay,
+                    }}
+                  />
                 </motion.div>
               ))}
 
-              {/* Center circular emblem */}
+              {/* Center circular emblem (Star Card) */}
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.45, duration: 0.5, type: 'spring' }}
-                className="absolute"
-                style={{ top: '35%', left: '54%', transform: 'translate(-50%,-50%)' }}
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-16 sm:w-20 md:w-36 select-none"
+                style={{
+                  filter: 'drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4)) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2))',
+                }}
               >
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center"
-                  style={{
-                    background: '#5D6B52',
-                    border: '1px solid rgba(255,255,255,0.3)',
-                    boxShadow: '0 8px 24px rgba(0,0,0,0.4)',
+                <motion.img
+                  src="https://res.cloudinary.com/dacyy7rkn/image/upload/v1778406647/9_zkevym.png"
+                  alt="Our Commitment star logo"
+                  className="w-full h-auto object-contain"
+                  animate={{
+                    rotate: 360,
+                    y: [0, -8, 0]
                   }}
-                >
-                  <MercerCross size={22} />
-                </div>
+                  transition={{
+                    rotate: {
+                      repeat: Infinity,
+                      duration: 12,
+                      ease: 'linear'
+                    },
+                    y: {
+                      repeat: Infinity,
+                      duration: 5.0,
+                      ease: 'easeInOut'
+                    }
+                  }}
+                />
               </motion.div>
             </div>
           </div>
