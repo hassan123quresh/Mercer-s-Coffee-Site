@@ -521,7 +521,7 @@ export default function HomePage() {
               className="font-display font-light text-[#535F48] leading-tight"
               style={{ fontSize: 'clamp(32px, 5vw, 56px)', letterSpacing: '-0.01em' }}
             >
-              More Than Just Coffee
+              More Than Just Coffee.
             </h2>
           </div>
 
