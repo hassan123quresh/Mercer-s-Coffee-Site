@@ -297,7 +297,7 @@ export default function HomePage() {
                 style={{ aspectRatio: '4/5' }}
               >
                 <img
-                  src="/images/cafe-interior.jpg"
+                  src="/images/homepage-interior.jpg"
                   alt="Mercer's Coffee interior"
                   className="w-full h-full object-cover hover-scale"
                 />
